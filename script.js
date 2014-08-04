@@ -2,7 +2,7 @@
     'use strict';
 
     var openDefault = function() {
-        window.location = '?url=repos/github/gemoji/contents/images/emoji';
+        window.location = '?url=portfolio';
     };
 
     var urlPath = getUrlFromVars();
@@ -19,7 +19,7 @@
     var loadedPage = 1;
     var LOAD_MORE = 5;
 
-    $.getJSON('https://api.github.com/' + urlPath).done(function(data) {
+    $.getJSON('https://api.github.com/repos/majcn/tjasa_portfolio/contents/images/' + urlPath).done(function(data) {
       $.each( data, function( key, value ) {
         if (filterRegex.test(value['name'])) {
             pages.push(value['html_url'].replace('/blob/', '/raw/'));
